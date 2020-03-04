@@ -25,28 +25,24 @@ class Dishdetail extends Component{
         }
     };
 
-    renderComments(comments) {
-        if (comments != null) {
+    renderComments(comments){    
+        if(comments != null){
             const comts = comments.map((comment) => {
                 return (
-                    <div>
-                        <br></br>
-                        {comment.comment}
-                        <br></br>
-                        <br></br>
-                        --{comment.author}, {comment.date}
-                        <br></br>
-                    </div>
+                    <ul className="list-unstyled">
+                        <li>{comment.comment}</li>
+                        <li> --{comment.author}, {comment.date}</li>
+                    </ul>
                 )
-            });
-            return (
+            });  
+            return(
                 <div>
                     <h4>Comments</h4>
                     {comts}
-                </div>
+                </div>              
             );
-        } else {
-            return (
+        }else{
+            return(
                 <div></div>
             );
         }
